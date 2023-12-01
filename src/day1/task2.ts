@@ -1,25 +1,7 @@
 import { input } from "./taskInput";
 
-// Part 1 start
 const inputLines = input.split("\n");
 
-const nums = inputLines.map((line) => {
-  const lineNums = line.replace(/\D/g, "");
-  if (lineNums.length === 1) {
-    return Number(`${lineNums}${lineNums}`);
-  } else {
-    return Number(`${lineNums[0]}${lineNums[lineNums.length - 1]}`);
-  }
-});
-
-const numsSummed = nums.reduce((accumulator, currentValue) => {
-  return accumulator + currentValue;
-}, 0);
-
-console.log("Part 1 result", numsSummed);
-// Part 1 end
-
-// Part 2 start
 const alphaNumDict: Record<string, string> = {
   one: "1",
   two: "2",
@@ -103,6 +85,4 @@ const realNumsSummed = realNums.reduce((accumulator, currentValue) => {
   return accumulator + currentValue;
 }, 0);
 
-console.log("Part 2 result", realNumsSummed);
-
-// Part 2 end
+console.log("Task 2 result", realNumsSummed);
