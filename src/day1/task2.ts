@@ -16,7 +16,7 @@ const alphaNumDict: Record<string, string> = {
 
 const realNums: number[] = [];
 
-inputLines.map((line) => {
+inputLines.forEach((line) => {
   const locations: Record<string, { first: any; last: any }> = {
     "1": { first: null, last: null },
     "2": { first: null, last: null },
