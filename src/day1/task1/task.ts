@@ -69,7 +69,7 @@ inputLines.map((line) => {
     lastValueLocation: Number.NEGATIVE_INFINITY,
   };
 
-  Object.keys(locations).forEach((key, index, array) => {
+  Object.keys(locations).forEach((key) => {
     const firstLocation = locations[key]["first"];
     if (
       firstLocation < firstAndLastValues.firstValueLocation &&
