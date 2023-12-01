@@ -69,7 +69,6 @@ inputLines.map((line) => {
       lastLocation > -1
     ) {
       firstAndLastValues.lastValueLocation = lastLocation;
-
       firstAndLastValues.lastValue = alphaNumDict[key]
         ? alphaNumDict[key]
         : key;
