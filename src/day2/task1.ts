@@ -2,10 +2,6 @@ import { getMaxValues, parseNumber } from "./utils";
 import { getLines, getSumOfValues } from "../utils";
 import { input } from "./taskInput";
 
-const MAX_RED_COUNT = 12;
-const MAX_GREEN_COUNT = 13;
-const MAX_BLUE_COUNT = 14;
-
 const games = getLines(input);
 
 const filteredGameIds = games
@@ -13,9 +9,9 @@ const filteredGameIds = games
     const gameId = parseNumber(game.substring(0, game.indexOf(":")));
     const maxGameValues = getMaxValues(game);
 
-    return maxGameValues["red"] <= MAX_RED_COUNT &&
-      maxGameValues["green"] <= MAX_GREEN_COUNT &&
-      maxGameValues["blue"] <= MAX_BLUE_COUNT
+    return maxGameValues["red"] <= 12 &&
+      maxGameValues["green"] <= 13 &&
+      maxGameValues["blue"] <= 14
       ? gameId
       : null;
   })
