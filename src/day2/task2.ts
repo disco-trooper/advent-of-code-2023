@@ -1,4 +1,4 @@
-import { getMaxValues, getSumOfValues } from "./utils";
+import { getMaxValues, getRolls, getSumOfValues } from "./utils";
 import { getLines } from "../utils";
 import { input } from "./taskInput";
 
@@ -6,7 +6,7 @@ const games = getLines(input);
 
 const powerValues = games
   .map((game) => {
-    const rolls = game.substring(game.indexOf(":") + 2).split("; ");
+    const rolls = getRolls(game);
     const maxGameValues = getMaxValues(rolls);
 
     return maxGameValues.red * maxGameValues.green * maxGameValues.blue;

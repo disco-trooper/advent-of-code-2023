@@ -1,4 +1,4 @@
-import { getMaxValues, getSumOfValues } from "./utils";
+import { getMaxValues, getRolls, getSumOfValues } from "./utils";
 import { getLines } from "../utils";
 import { input } from "./taskInput";
 
@@ -13,7 +13,7 @@ const filteredGameIds = games
     const gameId = Number(
       game.substring(0, game.indexOf(":")).replace(/\D/g, "")
     );
-    const rolls = game.substring(game.indexOf(":") + 2).split("; ");
+    const rolls = getRolls(game);
     const maxGameValues = getMaxValues(rolls);
 
     return maxGameValues["red"] <= MAX_RED_COUNT &&

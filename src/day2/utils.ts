@@ -25,3 +25,7 @@ export const getSumOfValues = (values: number[]): number => {
     return accumulator + currentValue;
   }, 0);
 };
+
+export const getRolls = (game: string) => {
+  return game.substring(game.indexOf(":") + 2).split("; ");
+};
