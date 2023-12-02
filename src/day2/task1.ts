@@ -1,5 +1,5 @@
-import { getMaxValues } from "./utils";
-import { getLines, getSumOfValues, getStringDigitsFromString } from "../utils";
+import { getMaxValues, parseNumber } from "./utils";
+import { getLines, getSumOfValues } from "../utils";
 import { input } from "./taskInput";
 
 const MAX_RED_COUNT = 12;
@@ -10,9 +10,7 @@ const games = getLines(input);
 
 const filteredGameIds = games
   .map((game) => {
-    const gameId = Number(
-      getStringDigitsFromString(game.substring(0, game.indexOf(":")))
-    );
+    const gameId = parseNumber(game.substring(0, game.indexOf(":")));
     const maxGameValues = getMaxValues(game);
 
     return maxGameValues["red"] <= MAX_RED_COUNT &&

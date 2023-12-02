@@ -12,7 +12,7 @@ export const getMaxValues = (game: string): Record<string, number> => {
     const cubes = roll.split(", ");
 
     cubes.forEach((cube) => {
-      const number = Number(getStringDigitsFromString(cube));
+      const number = parseNumber(cube);
       const color = cube.substring(cube.indexOf(" ")).trim();
 
       maxGameValues[color] =
@@ -21,4 +21,8 @@ export const getMaxValues = (game: string): Record<string, number> => {
   });
 
   return maxGameValues;
+};
+
+export const parseNumber = (string: string) => {
+  return Number(getStringDigitsFromString(string));
 };
