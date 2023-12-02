@@ -1,11 +1,12 @@
 import { getMaxValues, getSumOfValues } from "./utils";
+import { getLines } from "../utils";
 import { input } from "./taskInput";
 
 const MAX_RED_COUNT = 12;
 const MAX_GREEN_COUNT = 13;
 const MAX_BLUE_COUNT = 14;
 
-const games = input.split("\n");
+const games = getLines(input);
 
 const filteredGameIds = games
   .map((game) => {

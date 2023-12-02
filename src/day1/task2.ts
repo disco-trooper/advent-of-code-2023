@@ -1,6 +1,7 @@
+import { getLines } from "../utils";
 import { input } from "./taskInput";
 
-const inputLines = input.split("\n");
+const inputLines = getLines(input);
 
 const alphaNumDict: Record<string, string> = {
   one: "1",

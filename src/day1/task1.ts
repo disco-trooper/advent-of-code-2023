@@ -1,6 +1,7 @@
+import { getLines } from "../utils";
 import { input } from "./taskInput";
 
-const inputLines = input.split("\n");
+const inputLines = getLines(input);
 
 const nums = inputLines.map((line) => {
   const lineNums = line.replace(/\D/g, "");

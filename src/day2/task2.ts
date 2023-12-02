@@ -1,7 +1,8 @@
 import { getMaxValues, getSumOfValues } from "./utils";
+import { getLines } from "../utils";
 import { input } from "./taskInput";
 
-const games = input.split("\n");
+const games = getLines(input);
 
 const powerValues = games
   .map((game) => {
