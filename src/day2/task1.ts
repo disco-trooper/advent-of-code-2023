@@ -22,7 +22,7 @@ const filteredGameIds = games
       ? gameId
       : null;
   })
-  .filter((el) => el !== null) as number[];
+  .filter((el) => el) as number[];
 
 const sumOfIds = getSumOfValues(filteredGameIds);
 

@@ -11,7 +11,7 @@ const powerValues = games
 
     return maxGameValues.red * maxGameValues.green * maxGameValues.blue;
   })
-  .filter((el) => el !== null) as number[];
+  .filter((el) => el) as number[];
 
 const sumOfPowers = getSumOfValues(powerValues);
 
