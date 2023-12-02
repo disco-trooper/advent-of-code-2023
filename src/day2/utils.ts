@@ -1,3 +1,5 @@
+import { getStringDigitsFromString } from "../utils";
+
 export const getMaxValues = (rolls: string[]): Record<string, number> => {
   const maxGameValues: Record<string, number> = {
     red: 0,
@@ -9,7 +11,7 @@ export const getMaxValues = (rolls: string[]): Record<string, number> => {
     const cubes = roll.split(", ");
 
     cubes.forEach((cube) => {
-      const number = Number(cube.replace(/\D/g, ""));
+      const number = Number(getStringDigitsFromString(cube));
       const color = cube.substring(cube.indexOf(" ")).trim();
 
       maxGameValues[color] =
@@ -18,12 +20,6 @@ export const getMaxValues = (rolls: string[]): Record<string, number> => {
   });
 
   return maxGameValues;
-};
-
-export const getSumOfValues = (values: number[]): number => {
-  return values.reduce((accumulator, currentValue) => {
-    return accumulator + currentValue;
-  }, 0);
 };
 
 export const getRolls = (game: string) => {

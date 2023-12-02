@@ -1,5 +1,5 @@
-import { getMaxValues, getRolls, getSumOfValues } from "./utils";
-import { getLines } from "../utils";
+import { getMaxValues, getRolls } from "./utils";
+import { getLines, getSumOfValues } from "../utils";
 import { input } from "./taskInput";
 
 const games = getLines(input);
@@ -15,4 +15,4 @@ const powerValues = games
 
 const sumOfPowers = getSumOfValues(powerValues);
 
-console.log(sumOfPowers);
+console.log("Task 2 result", sumOfPowers);

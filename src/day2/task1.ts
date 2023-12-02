@@ -1,5 +1,5 @@
-import { getMaxValues, getRolls, getSumOfValues } from "./utils";
-import { getLines } from "../utils";
+import { getMaxValues, getRolls } from "./utils";
+import { getLines, getSumOfValues, getStringDigitsFromString } from "../utils";
 import { input } from "./taskInput";
 
 const MAX_RED_COUNT = 12;
@@ -11,7 +11,7 @@ const games = getLines(input);
 const filteredGameIds = games
   .map((game) => {
     const gameId = Number(
-      game.substring(0, game.indexOf(":")).replace(/\D/g, "")
+      getStringDigitsFromString(game.substring(0, game.indexOf(":")))
     );
     const rolls = getRolls(game);
     const maxGameValues = getMaxValues(rolls);
@@ -26,4 +26,4 @@ const filteredGameIds = games
 
 const sumOfIds = getSumOfValues(filteredGameIds);
 
-console.log(sumOfIds);
+console.log("Task 1 result", sumOfIds);

@@ -1,4 +1,4 @@
-import { getLines } from "../utils";
+import { getLines, getSumOfValues } from "../utils";
 import { input } from "./taskInput";
 
 const inputLines = getLines(input);
@@ -81,8 +81,6 @@ inputLines.forEach((line) => {
   );
 });
 
-const realNumsSummed = realNums.reduce((accumulator, currentValue) => {
-  return accumulator + currentValue;
-}, 0);
+const realNumsSummed = getSumOfValues(realNums);
 
 console.log("Task 2 result", realNumsSummed);
