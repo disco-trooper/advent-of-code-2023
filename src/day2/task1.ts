@@ -35,10 +35,10 @@ const filteredGameIds = games
       ? gameId
       : null;
   })
-  .filter((el) => el !== null);
+  .filter((el) => el !== null) as number[];
 
 const sumOfIds = filteredGameIds.reduce((accumulator, currentValue) => {
-  return accumulator! + currentValue!;
+  return accumulator + currentValue;
 }, 0);
 
 console.log(sumOfIds);
