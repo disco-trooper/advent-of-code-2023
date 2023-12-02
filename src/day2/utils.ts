@@ -2,7 +2,6 @@ import { getStringDigitsFromString } from "../utils";
 
 export const getMaxValues = (game: string): Record<string, number> => {
   const rolls = game.substring(game.indexOf(":") + 2).split("; ");
-
   const maxGameValues: Record<string, number> = {
     red: 0,
     green: 0,
