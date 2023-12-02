@@ -2,20 +2,13 @@ import { input } from "./taskInput";
 
 const games = input.split("\n");
 
-const MAX_RED_COUNT = 12;
-const MAX_GREEN_COUNT = 13;
-const MAX_BLUE_COUNT = 14;
-
-const filteredGameIds = games
+const powerValues = games
   .map((game) => {
     const maxGameValues: Record<string, number> = {
       red: 0,
       green: 0,
       blue: 0,
     };
-    const gameId = Number(
-      game.substring(0, game.indexOf(":")).replace(/\D/g, "")
-    );
     const rolls = game.substring(game.indexOf(":") + 2).split("; ");
 
     rolls.forEach((roll) => {
@@ -30,16 +23,12 @@ const filteredGameIds = games
       });
     });
 
-    return maxGameValues["red"] <= MAX_RED_COUNT &&
-      maxGameValues["green"] <= MAX_GREEN_COUNT &&
-      maxGameValues["blue"] <= MAX_BLUE_COUNT
-      ? gameId
-      : null;
+    return maxGameValues.red * maxGameValues.green * maxGameValues.blue;
   })
   .filter((el) => el !== null) as number[];
 
-const sumOfIds = filteredGameIds.reduce((accumulator, currentValue) => {
+const sumOfPowers = powerValues.reduce((accumulator, currentValue) => {
   return accumulator + currentValue;
 }, 0);
 
-console.log(sumOfIds);
+console.log(sumOfPowers);
